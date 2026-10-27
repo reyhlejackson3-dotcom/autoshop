@@ -1,0 +1,59 @@
+/* AVD problem checker — extends style.css */
+.dx { padding: clamp(120px, 14vw, 170px) 0 clamp(70px, 9vw, 120px); min-height: 80vh; }
+.dx .sec-head h1 { font-size: clamp(2.1rem, 4.8vw, 4rem); margin: 16px 0 16px; }
+.nav__links a[aria-current="page"] { color: var(--cyan); }
+
+.dx__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(18px, 3vw, 34px); align-items: start; }
+.dx__grid > .reveal { position: sticky; top: 100px; }
+.dx__form { display: grid; gap: 18px; padding: clamp(22px, 3vw, 34px); }
+.dx__form .btn--fat { width: 100%; }
+.dx__form .btn[disabled] { opacity: 0.6; cursor: progress; animation: none; }
+.dx__count { justify-self: end; margin-top: -10px; font-size: 0.75rem; font-weight: 700; color: var(--steel); }
+.dx__fine { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+.dx__out { display: grid; gap: 14px; min-width: 0; }
+.dx__empty { display: grid; justify-items: center; gap: 12px; padding: 54px 24px; text-align: center; color: var(--muted); }
+.dx__empty .ico { width: 38px; height: 38px; color: var(--steel); }
+
+/* drive-advice banner */
+.dx__banner { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border-radius: var(--r-md); border: 1px solid var(--line-strong); background: rgba(31, 111, 235, 0.1); }
+.dx__banner .ico { flex: none; width: 28px; height: 28px; margin-top: 2px; }
+.dx__banner b { display: block; font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+.dx__banner p { color: #c3cde0; font-size: 0.95rem; }
+.dx__banner--ok .ico { color: var(--cyan); }
+.dx__banner--care { background: rgba(255, 176, 74, 0.1); border-color: rgba(255, 176, 74, 0.45); }
+.dx__banner--care .ico { color: var(--amber); }
+.dx__banner--stop { background: rgba(255, 107, 107, 0.12); border-color: rgba(255, 107, 107, 0.55); }
+.dx__banner--stop .ico { color: #ff6b6b; }
+
+/* cause cards */
+.dx__cause { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; padding: 20px 22px; }
+.dx__rank { grid-row: 1 / span 3; display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--r-pill); background: #0d1626; border: 1px solid var(--line-strong); font-weight: 900; font-style: italic; color: var(--cyan); }
+.dx__top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; justify-content: space-between; }
+.dx__top h3 { font-size: 1.05rem; font-weight: 800; }
+.dx__cause p { color: #c3cde0; font-size: 0.93rem; line-height: 1.55; }
+.dx__cause p.do { color: var(--muted); }
+.dx__cause p.do b { color: #e6ecf7; font-weight: 700; }
+
+.pill { display: inline-flex; align-items: center; gap: 0.5em; padding: 0.4em 0.9em; border-radius: var(--r-pill); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid currentColor; white-space: nowrap; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill--low { color: var(--cyan); background: rgba(56, 210, 255, 0.08); }
+.pill--soon { color: var(--amber); background: rgba(255, 176, 74, 0.09); }
+.pill--high { color: #ff6b6b; background: rgba(255, 107, 107, 0.1); }
+
+.dx__ask { padding: 20px 22px; }
+.dx__ask b { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); }
+.dx__ask ul { margin: 10px 0 0 18px; color: #c3cde0; font-size: 0.93rem; display: grid; gap: 6px; }
+.dx__disc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; padding: 0 6px; }
+.dx__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.dx__cta .btn { flex: 1 1 180px; }
+
+/* loading skeleton */
+.dx__skel { height: 96px; border-radius: var(--r-md); border: 1px solid var(--line); background: linear-gradient(100deg, #0b1018 30%, #141d2e 50%, #0b1018 70%); background-size: 220% 100%; animation: dxsk 1.3s linear infinite; }
+@keyframes dxsk { from { background-position: 120% 0; } to { background-position: -120% 0; } }
+
+@media (max-width: 900px) {
+  .dx__grid { grid-template-columns: 1fr; }
+  .dx__grid > .reveal { position: static; }
+}
+@media (prefers-reduced-motion: reduce) { .dx__skel { animation: none; } }
