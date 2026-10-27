@@ -22,11 +22,12 @@
      1. SCROLL-SCRUBBED CAR
      ------------------------------------------------------------------ */
   const FRAME_COUNT = 241;
+  const hasStory = !!$('#top .stage, #top #stage');   // other pages (e.g. diagnose.html) have no car story
   const story = $('#top');
   const stage = $('#stage');
   const wrap = $('#carWrap');
   const canvas = $('#car');
-  const ctx = canvas.getContext('2d');
+  const ctx = hasStory ? canvas.getContext('2d') : null;
   const loader = $('#loader');
   const loaderBar = $('#loaderBar');
   const loaderText = $('#loaderText');
@@ -63,6 +64,7 @@
     });
   }
   (async function loadAll() {
+    if (!hasStory) return;
     let cursor = 0;
     const worker = async () => { while (cursor < order.length) await loadFrame(order[cursor++]); };
     await Promise.all(Array.from({ length: 6 }, worker));
@@ -97,8 +99,8 @@
     baseCy = tall ? -(vh / 2) + vh * 0.4 : 0;
     dirty = true;
   }
-  addEventListener('resize', layout);
-  layout();
+  addEventListener('resize', hasStory ? layout : () => { vw = innerWidth; vh = innerHeight; });
+  if (hasStory) layout();
 
   // ----- story beats (cards that slide/fade in and out as you scroll)
   const beats = $$('.beat').map((el) => {
@@ -113,6 +115,7 @@
   });
 
   function updateBeats(p) {
+    if (!hasStory) return;
     let cx = 0, cs = 1;
     for (const B of beats) {
       const enter = 1 - smooth(B.a, B.b, p);
@@ -144,23 +147,28 @@
   let fabForced = false;
 
   function tick() {
-    const rect = story.getBoundingClientRect();
-    const total = rect.height - vh;
-    targetP = clamp(-rect.top / total, 0, 1);
-    curP = reduceMotion ? targetP : lerp(curP, targetP, 0.18);
-    if (Math.abs(targetP - curP) < 0.0004) curP = targetP;
+    if (hasStory) {
+      const rect = story.getBoundingClientRect();
+      const total = rect.height - vh;
+      targetP = clamp(-rect.top / total, 0, 1);
+      curP = reduceMotion ? targetP : lerp(curP, targetP, 0.18);
+      if (Math.abs(targetP - curP) < 0.0004) curP = targetP;
 
-    const idx = Math.round(curP * (FRAME_COUNT - 1));
-    if (idx !== lastIdx || dirty) { drawFrame(idx); lastIdx = idx; dirty = false; }
+      const idx = Math.round(curP * (FRAME_COUNT - 1));
+      if (idx !== lastIdx || dirty) { drawFrame(idx); lastIdx = idx; dirty = false; }
+    } else {
+      curP = 1;
+    }
 
     updateBeats(curP);
 
     // mouse parallax on the car
     pmx = lerp(pmx, mx, 0.07); pmy = lerp(pmy, my, 0.07);
-    wrap.style.setProperty('--pxm', (pmx * -26).toFixed(2) + 'px');
-    wrap.style.setProperty('--pym', (pmy * -16).toFixed(2) + 'px');
-
-    scrollHint.style.opacity = (1 - smooth(0, 0.025, curP)).toFixed(3);
+    if (hasStory) {
+      wrap.style.setProperty('--pxm', (pmx * -26).toFixed(2) + 'px');
+      wrap.style.setProperty('--pym', (pmy * -16).toFixed(2) + 'px');
+      scrollHint.style.opacity = (1 - smooth(0, 0.025, curP)).toFixed(3);
+    }
 
     // floating Contact Now: appears after the hero, hides at the form
     // (on phones the story cards already carry buttons, so the bar waits until the story ends)
@@ -185,10 +193,14 @@
     }
   }, { threshold: 0.12, rootMargin: '-5% 0px -5% 0px' });
   $$('.reveal').forEach((el) => { el.dataset.s = 'below'; io.observe(el); });
+  // lets other scripts (diagnose.js) animate cards they add later
+  window.AVD_reveal = (el) => { el.dataset.s = 'below'; io.observe(el); };
 
-  new IntersectionObserver((entries) => {
-    contactInView = entries[0].isIntersecting;
-  }, { threshold: 0, rootMargin: '0px 0px -35% 0px' }).observe($('#contact'));
+  if ($('#contact')) {
+    new IntersectionObserver((entries) => {
+      contactInView = entries[0].isIntersecting;
+    }, { threshold: 0, rootMargin: '0px 0px -35% 0px' }).observe($('#contact'));
+  }
 
   /* ------------------------------------------------------------------
      3. MOUSE INTERACTION
@@ -294,7 +306,20 @@
   const note = $('#formNote');
   const say = (msg, kind) => { note.textContent = msg; note.className = 'form-note ' + (kind || ''); };
 
-  form.addEventListener('submit', async (e) => {
+  // arriving from the problem checker: prefill vehicle + message
+  if (form) {
+    try {
+      const raw = sessionStorage.getItem('avd_prefill');
+      if (raw) {
+        sessionStorage.removeItem('avd_prefill');
+        const pf = JSON.parse(raw);
+        if (pf.vehicle && form.elements.vehicle) form.elements.vehicle.value = String(pf.vehicle).slice(0, 120);
+        if (pf.message && form.elements.message) form.elements.message.value = String(pf.message).slice(0, 1500);
+      }
+    } catch (err) { /* storage unavailable — ignore */ }
+  }
+
+  if (form) form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (form.elements.website.value) return;                       // honeypot
     const d = Object.fromEntries(new FormData(form).entries());
@@ -331,5 +356,5 @@
     say('Opening your messages app — tap send to text us.', 'ok');
   });
 
-  $('#year').textContent = new Date().getFullYear();
+  if ($('#year')) $('#year').textContent = new Date().getFullYear();
 })();
