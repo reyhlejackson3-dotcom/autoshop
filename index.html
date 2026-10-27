@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Advanced Vehicle Dynamics | Auto &amp; Diesel Repair in Denver, CO</title>
+  <meta name="description" content="Family-owned, ASE Certified auto, diesel and heavy-duty repair in Denver. Honest diagnostics, quality repairs. Fleets welcome. Call or text 720-383-2490.">
+  <meta name="theme-color" content="#030406">
+  <meta property="og:title" content="Advanced Vehicle Dynamics — Honest diagnostics. Quality repairs.">
+  <meta property="og:description" content="Family-owned, ASE Certified auto, diesel and heavy-duty repair in Denver. Fleets welcome.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Advanced Vehicle Dynamics LLC",
+    "telephone": "+1-720-383-2490",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2597 W 64th Ave",
+      "addressLocality": "Denver",
+      "addressRegion": "CO",
+      "postalCode": "80221",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "areaServed": "Denver, CO"
+  }
+  </script>
+</head>
+<body>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 17a8.5 8.5 0 1 1 16 0"/><path d="M12 17l4-5"/><circle cx="12" cy="17" r="1.2"/></symbol>
+    <symbol id="i-engine" viewBox="0 0 24 24"><path d="M4 11h2V8h4V6h5v2h2v3h3v5h-3v2H9l-2-2H4z"/><path d="M10 11h5"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="6.6"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/><path d="M9.5 4.6L12 6.5l2.5-1.9M9.5 19.4L12 17.5l2.5 1.9"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 16V7h11v9M13 10h4l3.5 3.5V16H19"/><circle cx="7" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="5.5" r="2.2"/><circle cx="18" cy="18.5" r="2.2"/><path d="M8.2 5.5H14a3.2 3.2 0 0 1 0 6.4h-4a3.2 3.2 0 0 0 0 6.4h5.8"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.8 4.7 4.7 1.8-4.7 1.8L11 16l-1.8-4.7L4.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.8 6 6.2.7-4.6 4.3 1.2 6.5-5.6-3.3-5.6 3.3 1.2-6.5L3 9.7 9.2 9z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M8.8 12l2.4 2.4 4-4.4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  </defs>
+</svg>
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="scrollbar" aria-hidden="true"><i></i></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="Advanced Vehicle Dynamics — home" data-fx="nudge">
+    <img src="assets/logo-sm.png" alt="AVD Advanced Vehicle Dynamics LLC" width="420" height="151">
+  </a>
+  <nav class="nav__links" id="navLinks" aria-label="Main">
+    <a href="#services" data-fx="nudge">Services</a>
+    <a href="#work" data-fx="nudge">Our Work</a>
+    <a href="#about" data-fx="nudge">About</a>
+    <a href="#reviews" data-fx="nudge">Reviews</a>
+    <a href="#location" data-fx="nudge">Location</a>
+  </nav>
+  <a class="btn btn--sm" href="#contact" data-fx="magnet">Contact Now</a>
+  <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks" data-fx="nudge">
+    <svg class="ico"><use href="#i-menu"/></svg>
+  </button>
+</header>
+
+<main>
+
+<!-- ============ STORY: hero + what we do (scroll-driven car) ============ -->
+<section class="story" id="top" aria-label="Advanced Vehicle Dynamics — how we work">
+  <div class="stage" id="stage">
+
+    <div class="car-wrap" id="carWrap">
+      <canvas id="car" width="1280" height="720" role="img"
+        aria-label="A blue sports coupe opens up to show its parts, worn parts are swapped for new ones, then the car is rebuilt and drives away."></canvas>
+    </div>
+
+    <!-- HERO -->
+    <div class="beat beat--hero" data-in="-1,0" data-out="0.085,0.125" data-side="left" data-shift="0.16" data-scale="0.9">
+      <p class="eyebrow">Family-owned · ASE Certified · Denver, CO</p>
+      <h1 class="display">Honest diagnostics.<br><span>Quality repairs.</span></h1>
+      <p class="lede">Auto, diesel and heavy-duty repair for Denver drivers and fleets.</p>
+      <div class="cta-row">
+        <button class="btn btn--fat" type="button" data-open-sheet data-fx="magnet">Contact Now <svg class="ico"><use href="#i-arrow"/></svg></button>
+        <a class="btn btn--ghost btn--fat" href="tel:+17203832490" data-fx="magnet"><svg class="ico"><use href="#i-phone"/></svg> (720) 383-2490</a>
+      </div>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="beat beat--right" data-in="0.155,0.19" data-out="0.275,0.305" data-side="right" data-shift="-0.15" data-scale="0.82">
+      <div class="beat__card" data-fx="tilt">
+        <span class="beat__tag">What we do</span>
+        <h2>Built for working vehicles.</h2>
+        <p>Light-duty, diesel, and medium/heavy-duty trucks and equipment — including A/C, diagnostics, engines, and transmissions.</p>
+      </div>
+    </div>
+
+    <!-- 01 DIAGNOSE -->
+    <div class="beat beat--left" data-in="0.315,0.345" data-out="0.395,0.425" data-side="left" data-shift="0.15" data-scale="0.82">
+      <div class="beat__card" data-fx="tilt">
+        <span class="beat__tag">01 · Diagnose</span>
+        <h2>Find the real problem.</h2>
+        <p>Honest diagnostics before any repair, so you know exactly what's going on.</p>
+      </div>
+    </div>
+
+    <!-- 02 REPLACE -->
+    <div class="beat beat--right" data-in="0.435,0.465" data-out="0.565,0.595" data-side="right" data-shift="-0.15" data-scale="0.82">
+      <div class="beat__card" data-fx="tilt">
+        <span class="beat__tag">02 · Replace</span>
+        <h2>Worn out. New in.</h2>
+        <p>Bad parts come out and fresh ones go in.</p>
+      </div>
+    </div>
+
+    <!-- 03 REBUILD -->
+    <div class="beat beat--left" data-in="0.625,0.655" data-out="0.755,0.785" data-side="left" data-shift="0.15" data-scale="0.82">
+      <div class="beat__card" data-fx="tilt">
+        <span class="beat__tag">03 · Rebuild</span>
+        <h2>Back together, built right.</h2>
+        <p>Quality repairs from the first bolt to the last.</p>
+      </div>
+    </div>
+
+    <!-- 04 BACK ON THE ROAD -->
+    <div class="beat beat--bottom" data-in="0.835,0.875" data-out="0.975,1.01" data-side="bottom" data-shift="0" data-scale="1">
+      <div class="beat__card" data-fx="tilt">
+        <span class="beat__tag">04 · Back on the road</span>
+        <h2>Back to work.</h2>
+        <p>Fleets welcome — shoot us a message and we'll get you taken care of.</p>
+        <button class="btn" type="button" data-open-sheet data-fx="magnet">Contact Now <svg class="ico"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint" aria-hidden="true"><i></i>Scroll</div>
+
+    <div class="loader" id="loader" role="status">
+      <img src="assets/logo-sm.png" alt="" width="190" height="68">
+      <div class="bar"><i id="loaderBar"></i></div>
+      <span id="loaderText">Warming up</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow">Services</p>
+      <h2 class="display">What we <span>fix</span></h2>
+      <p>From daily drivers to diesel trucks and heavy equipment, we diagnose it honestly and repair it right.</p>
+    </header>
+
+    <div class="grid grid--4">
+      <div class="reveal" style="--i:0"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-wrench"/></svg></div>
+        <h3>Automotive Diagnostics</h3><p>Check-engine lights, drivability problems and strange noises — found and explained.</p></article></div>
+      <div class="reveal" style="--i:1"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-gauge"/></svg></div>
+        <h3>Diesel Diagnostics</h3><p>Diesel trucks and equipment diagnosed properly, start to finish.</p></article></div>
+      <div class="reveal" style="--i:2"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-engine"/></svg></div>
+        <h3>Engines</h3><p>Engine repair for light-duty through heavy-duty vehicles.</p></article></div>
+      <div class="reveal" style="--i:3"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-gear"/></svg></div>
+        <h3>Transmission</h3><p>Transmission service and repair to keep you shifting smoothly.</p></article></div>
+      <div class="reveal" style="--i:4"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-snow"/></svg></div>
+        <h3>HVAC / A/C Service</h3><p>Air conditioning and HVAC service so the cab stays comfortable.</p></article></div>
+      <div class="reveal" style="--i:5"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-truck"/></svg></div>
+        <h3>Heavy Duty</h3><p>Medium and heavy-duty trucks and equipment.</p></article></div>
+      <div class="reveal" style="--i:6"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-route"/></svg></div>
+        <h3>Fleet Service</h3><p>Fleets are welcome. Send us a message and we'll get you taken care of.</p></article></div>
+      <div class="reveal" style="--i:7"><article class="card svc" data-fx="tilt">
+        <div class="ico-box"><svg class="ico"><use href="#i-spark"/></svg></div>
+        <h3>Custom Work</h3><p>Got something unique in mind? Tell us what you're building.</p></article></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR WORK ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow">Our work</p>
+      <h2 class="display">Done <span>right</span></h2>
+      <p>A look at what comes through the shop.</p>
+    </header>
+
+    <!-- To use your own photos: drop files into assets/work/ named work-1.jpg … work-6.jpg -->
+    <div class="gallery">
+      <div class="reveal shot--a" style="--i:0"><figure class="shot shot--a" data-fx="pan" style="min-height:340px">
+        <div class="shot__ph"><svg class="ico"><use href="#i-camera"/></svg>Diagnostics</div>
+        <img src="assets/work/work-1.jpg" alt="Diagnostics work at Advanced Vehicle Dynamics" loading="lazy" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()">
+        <figcaption>Diagnostics</figcaption></figure></div>
+      <div class="reveal shot--b" style="--i:1"><figure class="shot shot--b" data-fx="pan" style="min-height:340px">
+        <div class="shot__ph"><svg class="ico"><use href="#i-camera"/></svg>Engine work</div>
+        <img src="assets/work/work-2.jpg" alt="Engine work" loading="lazy" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()">
+        <figcaption>Engine work</figcaption></figure></div>
+      <div class="reveal shot--c" style="--i:2"><figure class="shot shot--c" data-fx="pan">
+        <div class="shot__ph"><svg class="ico"><use href="#i-camera"/></svg>Transmission</div>
+        <img src="assets/work/work-3.jpg" alt="Transmission work" loading="lazy" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()">
+        <figcaption>Transmission</figcaption></figure></div>
+      <div class="reveal shot--d" style="--i:3"><figure class="shot shot--d" data-fx="pan">
+        <div class="shot__ph"><svg class="ico"><use href="#i-camera"/></svg>A/C service</div>
+        <img src="assets/work/work-4.jpg" alt="A/C service" loading="lazy" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()">
+        <figcaption>A/C service</figcaption></figure></div>
+      <div class="reveal shot--e" style="--i:4"><figure class="shot shot--e" data-fx="pan">
+        <div class="shot__ph"><svg class="ico"><use href="#i-camera"/></svg>Heavy duty</div>
+        <img src="assets/work/work-5.jpg" alt="Heavy duty repair" loading="lazy" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()">
+        <figcaption>Heavy duty</figcaption></figure></div>
+      <div class="reveal shot--f" style="--i:5"><figure class="shot shot--f" data-fx="pan">
+        <div class="shot__ph"><svg class="ico"><use href="#i-camera"/></svg>Fleet &amp; custom work</div>
+        <img src="assets/work/work-6.jpg" alt="Fleet and custom work" loading="lazy" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()">
+        <figcaption>Fleet &amp; custom work</figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="card about" data-fx="tilt">
+        <div>
+          <p class="eyebrow">About us</p>
+          <h2 class="display">What's up, <span>Denver!</span></h2>
+          <p>We're Advanced Vehicle Dynamics—family-owned, ASE Certified, and here to help keep your vehicles working hard. We service light-duty, diesel, and medium/heavy-duty trucks and equipment, including A/C, diagnostics, engines, and transmissions. Fleets are welcome—shoot us a message and we'll get you taken care of.</p>
+        </div>
+        <div class="chips">
+          <div class="chip" data-fx="nudge"><svg class="ico"><use href="#i-home"/></svg><b>Family-owned</b><span>Local people, personal service.</span></div>
+          <div class="chip" data-fx="nudge"><svg class="ico"><use href="#i-badge"/></svg><b>ASE Certified</b><span>Certified expertise.</span></div>
+          <div class="chip" data-fx="nudge"><svg class="ico"><use href="#i-truck"/></svg><b>Light to heavy duty</b><span>Cars, diesel trucks, equipment.</span></div>
+          <div class="chip" data-fx="nudge"><svg class="ico"><use href="#i-route"/></svg><b>Fleets welcome</b><span>Message us to get started.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="card reviews" data-fx="tilt">
+        <div class="stars" aria-hidden="true">
+          <svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg>
+        </div>
+        <h2 class="display">Been <span>in?</span></h2>
+        <p>We're building our name one honest repair at a time. If we took care of you, a quick Google review means the world to a family-owned shop.</p>
+        <a class="btn btn--fat" data-fx="magnet" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Advanced+Vehicle+Dynamics+2597+W+64th+Ave+Denver+CO+80221">Leave a Google review <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="section" id="location">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow">Location</p>
+      <h2 class="display">Find the <span>shop</span></h2>
+    </header>
+    <div class="loc">
+      <div class="reveal"><div class="card map" data-fx="tilt">
+        <iframe title="Map to Advanced Vehicle Dynamics, 2597 W 64th Ave, Denver" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=2597+W+64th+Ave,+Denver,+CO+80221&output=embed"></iframe>
+      </div></div>
+      <div class="info">
+        <div class="reveal" style="--i:1"><div class="card" data-fx="tilt">
+          <div class="ico-box"><svg class="ico"><use href="#i-pin"/></svg></div>
+          <div><h3>Address</h3><p>2597 W 64th Ave<br>Denver, CO 80221</p></div></div></div>
+        <div class="reveal" style="--i:2"><div class="card" data-fx="tilt">
+          <div class="ico-box"><svg class="ico"><use href="#i-clock"/></svg></div>
+          <div><h3>Hours</h3><p>Mon – Fri<br>9am – 5pm</p></div></div></div>
+        <div class="reveal" style="--i:3"><div class="card" data-fx="tilt">
+          <div class="ico-box"><svg class="ico"><use href="#i-phone"/></svg></div>
+          <div><h3>Call / Text</h3><a href="tel:+17203832490" data-fx="nudge">(720) 383-2490</a></div></div></div>
+        <div class="reveal" style="--i:4">
+          <a class="btn btn--fat" style="width:100%" data-fx="magnet" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/dir/?api=1&destination=2597+W+64th+Ave+Denver+CO+80221">Get directions <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap contact">
+    <div class="contact__copy reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 class="display">Let's get you <span>rolling</span></h2>
+      <p>Tell us what's going on with your vehicle. Fleets welcome — shoot us a message and we'll get you taken care of.</p>
+      <div class="contact__direct">
+        <a class="btn btn--fat" href="tel:+17203832490" data-fx="magnet"><svg class="ico"><use href="#i-phone"/></svg> Call (720) 383-2490</a>
+        <a class="btn btn--ghost btn--fat" href="sms:+17203832490" data-fx="magnet"><svg class="ico"><use href="#i-chat"/></svg> Text us</a>
+      </div>
+    </div>
+
+    <div class="reveal" style="--i:2">
+      <form class="card form" id="contactForm" novalidate data-fx="tilt">
+        <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" placeholder="Your name" required data-fx="nudge"></label>
+        <label class="field"><span>Phone</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(720) 555-0123" required data-fx="nudge"></label>
+        <label class="field field--full"><span>Vehicle (year / make / model)</span><input name="vehicle" type="text" placeholder="e.g. 2018 Ford F-250 6.7L" data-fx="nudge"></label>
+        <label class="field field--full"><span>What's going on?</span><textarea name="message" rows="4" placeholder="Describe the issue, warning lights, noises…" data-fx="nudge"></textarea></label>
+        <label class="check" data-fx="nudge"><input type="checkbox" name="fleet"><i><svg class="ico"><use href="#i-check"/></svg></i><span>This is a fleet inquiry</span></label>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--fat" type="submit" data-fx="magnet">Send Message <svg class="ico"><use href="#i-arrow"/></svg></button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img src="assets/logo-sm.png" alt="AVD Advanced Vehicle Dynamics LLC" width="420" height="151" data-fx="nudge">
+    <p>2597 W 64th Ave, Denver, CO 80221<br>Mon–Fri 9am–5pm · <a href="tel:+17203832490" data-fx="nudge">(720) 383-2490</a></p>
+    <p>© <span id="year">2026</span> Advanced Vehicle Dynamics LLC. Family-owned · ASE Certified.</p>
+  </div>
+</footer>
+
+<!-- ============ FAT CONTACT NOW BUTTON ============ -->
+<div class="fab" id="fab">
+  <div class="sheet" id="sheet" role="dialog" aria-label="Contact options">
+    <a href="tel:+17203832490" data-fx="nudge"><span class="ico-box"><svg class="ico"><use href="#i-phone"/></svg></span><span>Call us<small>(720) 383-2490</small></span></a>
+    <a href="sms:+17203832490" data-fx="nudge"><span class="ico-box"><svg class="ico"><use href="#i-chat"/></svg></span><span>Text us<small>Quick question? Just text.</small></span></a>
+    <a href="#contact" id="sheetForm" data-fx="nudge"><span class="ico-box"><svg class="ico"><use href="#i-arrow"/></svg></span><span>Send a message<small>Fill out the short form</small></span></a>
+  </div>
+  <button class="btn btn--fat" id="fabBtn" type="button" aria-expanded="false" aria-controls="sheet" data-fx="magnet">Contact Now <svg class="ico"><use href="#i-arrow"/></svg></button>
+</div>
+
+<noscript><p style="position:fixed;bottom:0;left:0;right:0;padding:14px;text-align:center;background:#0b1018;z-index:99">Call or text us: (720) 383-2490</p></noscript>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
