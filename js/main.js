@@ -32,8 +32,7 @@
   const loaderText = $('#loaderText');
   const scrollHint = $('#scrollHint');
 
-  const useSmall = innerWidth <= 820;
-  const base = useSmall ? 'assets/frames-sm/' : 'assets/frames-lg/';
+  const base = ''; // flat layout: frames f001.webp … f241.webp sit in the site root
   const pad = (n) => String(n).padStart(3, '0');
 
   const frames = new Array(FRAME_COUNT).fill(null);
