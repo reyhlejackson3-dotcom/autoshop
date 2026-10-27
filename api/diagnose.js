@@ -157,7 +157,6 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 1200,
-        temperature: 0.3,
         system: SYSTEM,
         tools: [TOOL],
         tool_choice: { type: 'tool', name: TOOL.name },
