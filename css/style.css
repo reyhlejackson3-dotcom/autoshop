@@ -156,6 +156,12 @@ main, .nav, .fab, footer { position: relative; z-index: 2; }
   box-shadow: none; backdrop-filter: blur(8px);
 }
 .btn--ghost:hover { background: rgba(255, 255, 255, 0.1); box-shadow: none; }
+.btn--diag {
+  background: linear-gradient(135deg, #38d2ff, #1f6feb); color: #03121f;
+  box-shadow: 0 14px 34px -12px rgba(56, 210, 255, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.btn--diag:hover { box-shadow: 0 18px 44px -10px rgba(56, 210, 255, 1), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+.cta-row .btn--diag { flex: 1 1 100%; }
 .btn .ico { width: 1.3em; height: 1.3em; stroke-width: 2.2; }
 
 /* ---------- nav ---------- */
