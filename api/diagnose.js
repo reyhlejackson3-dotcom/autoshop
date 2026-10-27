@@ -6,6 +6,7 @@
      ANTHROPIC_API_KEY     REQUIRED. Your Anthropic API key.
      DIAGNOSE_MODEL        optional. Defaults to claude-haiku-5-5
      DIAGNOSE_DAILY_LIMIT  optional. Max requests per server instance per day (default 500)
+     DIAGNOSE_DEBUG        optional. Set to 1 to show the real error on the page while troubleshooting (remove after).
      ALLOWED_ORIGINS       optional. Comma-separated extra origins (e.g. a custom domain)
    ========================================================================== */
 'use strict';
@@ -166,13 +167,20 @@ module.exports = async function handler(req, res) {
         }]
       })
     });
-    if (!r.ok) throw new Error('upstream ' + r.status);
+    if (!r.ok) {
+      let detail = '';
+      try { const j = await r.json(); detail = (j && j.error && (j.error.type + ': ' + j.error.message)) || ''; } catch (e) { /* ignore */ }
+      const err = new Error('upstream ' + r.status + (detail ? ' - ' + detail : ''));
+      throw err;
+    }
     const data = await r.json();
     const block = (data.content || []).find((b) => b.type === 'tool_use' && b.name === TOOL.name);
     if (!block) throw new Error('no tool output');
     return send(res, 200, normalize(block.input));
   } catch (e) {
-    return send(res, 502, { error: "We couldn't run the check just now. Please try again, or call or text us at (720) 383-2490." });
+    console.error('diagnose failed:', e && e.name === 'AbortError' ? 'timeout' : (e && e.message)); // visible in Vercel -> Logs (never includes the key)
+    const msg = "We couldn't run the check just now. Please try again, or call or text us at (720) 383-2490.";
+    return send(res, 502, { error: process.env.DIAGNOSE_DEBUG === '1' ? msg + ' [debug: ' + (e && e.name === 'AbortError' ? 'timeout' : (e && e.message)) + ']' : msg });
   } finally {
     clearTimeout(timer);
   }
